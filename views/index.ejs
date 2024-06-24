@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    </head>
+    <body>
+        <div id="main-div">
+            
+           <!-- console.log("Data:", data); -->
+
+            <% if (data && data.boards) { %>
+                <ul>
+                    <% data.boards.forEach(board => { %>
+
+            
+                        <% if (board.items_page && board.items_page.items && board.items_page.items.length > 0) { %>
+                            <% board.items_page.items.forEach(item => { %>
+ 
+
+                                <% if (item.column_values && item.column_values.length > 0) { %>
+                                    <ul>
+                                        <% item.column_values.forEach(column => { %>
+                                            <li class="status" data-status="<%= column.text %>">Current Status: <%= column.text %></li>
+                                        <% }) %>
+                                    </ul>
+                                <% } else { %>
+                                    <p>No column values found for this item.</p>
+                                <% } %>
+                            <% }) %>
+                        <% } else { %>
+                            <li>No items found for this board.</li>
+                            <p>Not working</p>
+                        <% } %>
+                    <% }) %>
+                </ul>
+            <% } else { %>
+                <p>No boards found.</p>
+            <% } %>
+            
+        </div>
+        <script src="/js/main.js" ></script>
+    </body>
+</html>
