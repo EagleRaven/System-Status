@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (status === "Normal"){
             bkColor.style.backgroundColor = "#069C56";
         }
-        else if (status === "Warning"){
+        else if (status === "Warning" || status === "Traffic Warning" || status === "Weather Warning"){
             bkColor.style.backgroundColor = "#FF980E";
         }
-        else if (status === "Systems are down"){
+        else if (status === "Systems are down" || status === "Trucks are not operating"){
             bkColor.style.backgroundColor = "#D3212C";
         }
         else {
