@@ -32,7 +32,37 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+// Initially set opacity to 1
+document.getElementById("status").style.opacity = 1;
 
+// Increasing flag
+let increasing = false;
+
+function pulse() {
+    const statusID = document.getElementById("status");
+
+    // Get the ocacity as a number
+    let opacity = parseFloat(statusID.style.opacity);
+
+    // Set counter of increment and decrement
+    const counter = 0.01;
+
+    if(!increasing && statusID.style.opacity > 0.1){
+        statusID.style.opacity = opacity - counter;
+    }
+    else {
+        increasing = true; // switching the direction
+    }
+    
+    if(increasing && opacity < 1){
+        statusID.style.opacity = opacity + counter;
+    }
+    else {
+        increasing = false; // switching the direction
+    }
+}
+
+setInterval(pulse, 10);
 
 
 

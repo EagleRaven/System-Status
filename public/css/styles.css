@@ -24,3 +24,7 @@ body {
     padding: 50px;
     color: #f2f2f2;
 }
+
+#status {
+    opacity: 1;
+}

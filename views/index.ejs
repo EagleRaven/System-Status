@@ -29,7 +29,7 @@
                                 <% if (item.column_values && item.column_values.length > 0) { %>
                                     <ul>
                                         <% item.column_values.forEach(column => { %>
-                                            <li class="status" data-status="<%= column.text %>">Current Status: <%= column.text %></li>
+                                            <li id="status" class="status" data-status="<%= column.text %>">Current Status: <%= column.text %></li>
                                         <% }) %>
                                     </ul>
                                 <% } else { %>
