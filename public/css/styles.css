@@ -28,3 +28,11 @@ body {
 #status {
     opacity: 1;
 }
+
+#current {
+    font-size: 40px;
+}
+
+#status-detail {
+    font-weight: bold;
+}
