@@ -70,3 +70,6 @@ app.get('/', async (req, res) => {
 app.listen(3000, () => {
     console.log("Server Running...")
 });
+
+
+// If need to kill port - npx kill-port 3000
