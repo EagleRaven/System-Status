@@ -4,7 +4,6 @@ const app = express();
 const path = require('path');
 const axios = require('axios')
 
-// console.log('key: ', process.env.MONDAY_API_KEY);
 
 // Setting the view engine
 app.set('view engine', 'ejs');
@@ -13,11 +12,6 @@ app.set('views', __dirname + '/../views');
 // Serve static files (css etc)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Get Root
-// app.get('/', (req, res) => {
-//     console.log("Server running...");
-//     res.render('index');
-// });
 
 // Route to interact with Monday.com API
 app.get('/', async (req, res) => {
@@ -65,15 +59,5 @@ app.get('/', async (req, res) => {
     }
 });
   
-// console.log('Views directory:', path.join(__dirname, 'views'));
-
-
-// Listening on port 3000
-// app.listen(3000, () => {
-//     console.log("Server Running...")
-// });
-
 
 module.exports = app;
-
-// If need to kill port - npx kill-port 3000
