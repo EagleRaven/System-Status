@@ -8,6 +8,7 @@ const axios = require('axios')
 
 // Setting the view engine
 app.set('view engine', 'ejs');
+app.set('index', path.join(__dirname, 'views'));
 
 // Serve static files (css etc)
 app.use(express.static(path.join(__dirname, 'public')));
@@ -64,6 +65,7 @@ app.get('/', async (req, res) => {
     }
 });
   
+// console.log('Views directory:', path.join(__dirname, 'views'));
 
 
 // Listening on port 3000
