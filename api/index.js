@@ -8,7 +8,7 @@ const axios = require('axios')
 
 // Setting the view engine
 app.set('view engine', 'ejs');
-app.set('index', path.join(__dirname, 'views'));
+app.set('views', __dirname + '/../views');
 
 // Serve static files (css etc)
 app.use(express.static(path.join(__dirname, 'public')));
