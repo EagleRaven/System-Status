@@ -6,6 +6,13 @@ setTimeout(function(){
 
 const bkColor = document.getElementById("main-div");
 
+// Colors
+const green = "#069C56";
+const amber = "#FF980E";
+const red = "#D3212C";
+const blue = "#50859d";
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
     const statusElements = document.querySelectorAll(".status");
     
@@ -17,17 +24,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Log the status to the console
        // console.log(status);
 
-        if (status === "Normal"){
-            bkColor.style.backgroundColor = "#069C56";
+        if (status === "Normal" || status === "Normal Service Resumed"){
+            bkColor.style.backgroundColor = green;
         }
-        else if (status === "Warning" || status === "Traffic Warning" || status === "Weather Warning"){
-            bkColor.style.backgroundColor = "#FF980E";
+        else if (status === "Possible Traffic Delays" || status === "Weather Affecting Flights" || status === "Flights Delayed" || status === "Unforeseen service impact"){
+            bkColor.style.backgroundColor = amber;
         }
-        else if (status === "Systems are down" || status === "Trucks are not operating"){
-            bkColor.style.backgroundColor = "#D3212C";
+        else if (status === "Service Halted Critical Weather" || status === "Service Halted Major Issue"){
+            bkColor.style.backgroundColor = red;
         }
         else {
-            bkColor.style.backgroundColor = "#50859d";
+            bkColor.style.backgroundColor = blue;
         }
     });
 });
