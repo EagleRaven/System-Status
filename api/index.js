@@ -55,7 +55,7 @@ app.get('/', async (req, res) => {
         res.render('index', { data: response.data.data });
     } catch (error) {
         console.error('Error interacting with Monday.com API:', error.message);
-        res.status(500).send('Something went wrong!');
+        res.status(500).send('Something went wrong. Please refresh.');
     }
 });
   
