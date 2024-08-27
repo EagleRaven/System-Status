@@ -1,7 +1,7 @@
 // Reload page every miniute
 setTimeout(function(){
     location.reload();
-}, 240000); // 1000 = 1 sec, 60000 = 1 min, 240000 = 4 min
+}, 60000); // 1000 = 1 sec, 60000 = 1 min, 240000 = 4 min
 
 
 const bkColor = document.getElementById("main-div");
